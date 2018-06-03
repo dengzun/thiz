@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.thiz</groupId>
+    <artifactId>thiz-parent</artifactId>
+    <version>${thiz.version}</version>
+    <packaging>pom</packaging>
+
+    <name>Thiz Parent</name>
+    <description>Thiz Application Parent</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <thiz.version>1.0.0</thiz.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- dependencies for thiz-common -->
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-common-lang</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-common-util</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+
+            <!-- dependencies for thiz-starter -->
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-starter</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+
+            <!-- dependencies for thiz-core -->
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-core-common-dal</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-core-biz-thizcore-</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+
+            <!-- dependencies for thiz-gateway -->
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-gateway-common-dal</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+
+            <!-- dependencies for thiz-shceduler -->
+            <dependency>
+                <groupId>com.thiz</groupId>
+                <artifactId>thiz-scheduler-common-dal</artifactId>
+                <version>${thiz.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>modules/common/lang</module>
+        <module>modules/common/util</module>
+        <module>modules/starter</module>
+        <module>modules/scheduler/app/common/dal</module>
+        <module>modules/core/app/common/dal</module>
+        <module>modules/core/app/biz/thizcore</module>
+        <module>modules/gateway/app/common/dal</module>
+    </modules>
+</project>
